@@ -12,9 +12,12 @@ import { from } from 'rxjs';
 //Array de rutas
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'zapatillas', component: ZapatillasComponent },
   { path: 'videojuego', component: VideojuegoComponent },
   { path: 'cursos', component: CursosComponent },
+  { path: 'cursos/:nombre', component: CursosComponent },
+  { path: 'cursos/:nombre/:followers', component: CursosComponent },
   { path: '**', component: HomeComponent } // siempre es la última que se declara por que si no los demas componentes no entrarian
 ];
 
