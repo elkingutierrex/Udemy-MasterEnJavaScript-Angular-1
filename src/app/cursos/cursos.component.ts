@@ -25,6 +25,10 @@ export class CursosComponent implements OnInit {
     })
   }
 
+  redirecTo(){
+    this._router.navigate(['/zapatillas']);
+  }
+
 
 
 }
