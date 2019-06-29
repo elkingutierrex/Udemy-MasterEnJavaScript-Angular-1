@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component'
 import { ZapatillasComponent } from './zapatillas/zapatillas.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { CursosComponent } from './cursos/cursos.component';
+import { ExternoComponent} from './externo/externo.component'
 import { from } from 'rxjs';
 
 //Array de rutas
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'cursos', component: CursosComponent },
   { path: 'cursos/:nombre', component: CursosComponent },
   { path: 'cursos/:nombre/:followers', component: CursosComponent },
+  { path: 'externo', component : ExternoComponent },
   { path: '**', component: HomeComponent } // siempre es la última que se declara por que si no los demas componentes no entrarian
 ];
 

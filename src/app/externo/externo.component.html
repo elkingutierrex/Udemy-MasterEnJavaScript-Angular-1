@@ -1,0 +1,13 @@
+<div *ngIf="user"
+      style="border: 1px solid gray; margin: 10px">
+      <input type="text" [(ngModel)]="userId"
+             (keyup.enter)="cargaUsuario()">
+  <img src="{{user.avatar}}"
+       alt="imagen de perfil"
+       width="100px"
+       style="border-radius: 50%">
+  <h2>
+    {{user.first_name + ' '+ user.last_name}}
+  </h2>
+
+</div>
