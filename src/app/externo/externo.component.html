@@ -1,3 +1,7 @@
+
+<div *ngIf="!user">
+  Cargando...
+</div>
 <div *ngIf="user"
       style="border: 1px solid gray; margin: 10px">
       <input type="text" [(ngModel)]="userId"
@@ -11,3 +15,4 @@
   </h2>
 
 </div>
+
