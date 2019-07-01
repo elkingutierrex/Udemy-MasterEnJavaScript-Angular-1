@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { routing, appRoutingProviders } from './app.routing'
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
@@ -12,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { ExternoComponent } from './externo/externo.component'
 
 import { CalculadoraPipe} from './pipes/calculadora.pipe';
+import { ContactoComponent } from './contacto/contacto.component';
 
 
 @NgModule({
@@ -22,13 +24,16 @@ import { CalculadoraPipe} from './pipes/calculadora.pipe';
     CursosComponent,
     HomeComponent,
     ExternoComponent,
-    CalculadoraPipe
+    CalculadoraPipe,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     routing,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
+
   ],
   providers: [
     appRoutingProviders
