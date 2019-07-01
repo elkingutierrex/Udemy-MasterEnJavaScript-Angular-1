@@ -1,6 +1,7 @@
 <h2>Contacto</h2>
 
-<form #formContacto="ngForm" (ngSubmit)="onSubmit()">
+<form #formContacto="ngForm"
+      (ngSubmit)="onSubmit(formContacto)">
   <label for="nombre">
     Nombre
   </label>
@@ -8,7 +9,12 @@
   <input type="text"
          name= "nombre"
          #nombre="ngModel"
-         [(ngModel)]="usuario.nombre"/>
+         [(ngModel)]="usuario.nombre"
+         required
+         pattern="[a-zA-Z]+"/>
+  <span *ngIf="nombre.touched && !usuario.nombre" >
+    El nombre es obligatorio
+  </span>
   <br/>
 
   <label for="apellidos">
@@ -18,7 +24,12 @@
   <input type="text"
          name= "apellidos"
          #apellidos="ngModel"
-         [(ngModel)]="usuario.apellidos"/>
+         [(ngModel)]="usuario.apellidos"
+         required
+         pattern="[a-zA-Z]+"/>
+  <span *ngIf="apellidos.touched && !usuario.apellidos" >
+    Los apellidos son obligatorio
+  </span>
   <br/>
 
   <label for="email">
@@ -27,8 +38,12 @@
   <input type="text"
          name="email"
          #email="ngModel"
-         [(ngModel)]="usuario.email"/>
-         <br/>
+         [(ngModel)]="usuario.email"
+         required/>
+  <span *ngIf="email.touched && !usuario.email" >
+     El email es obligatorio
+  </span>
+    <br/>
 
   <label for="mensaje">
     Mensaje
@@ -36,10 +51,12 @@
   <br/>
   <textarea name="mensaje"
             #mensaje="ngModel"
-            [(ngModel)]="usuario.mensaje">
+            [(ngModel)]="usuario.mensaje"
+            required>
   </textarea>
+  <span *ngIf="mensaje.touched && !usuario.mensaje" >El mensaje es obligatorio</span>
   <br/>
 
-  <input type="submit" value="Enviar"/>
+  <input type="submit" value="Enviar" [disabled]="!formContacto.form.valid"/>
 
 </form>
